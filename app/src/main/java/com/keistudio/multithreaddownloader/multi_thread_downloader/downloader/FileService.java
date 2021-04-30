@@ -90,7 +90,7 @@ public class FileService {
     public void update(String path, int threadid, int pos) {
         SQLiteDatabase db = openHelper.getWritableDatabase();
         db.execSQL("update filedownlog set downlength = ? " +
-                "where path = ? and threadid = ?", new Object[]{pos, path, threadid});
+                "where downpath = ? and threadid = ?", new Object[]{pos, path, threadid});
         db.close();
 
         /**
@@ -100,7 +100,7 @@ public class FileService {
 
     public void delete(String path) {
         SQLiteDatabase db = openHelper.getWritableDatabase();
-        db.execSQL("delete from filedownlog where path = ? ", new Object[]{path});
+        db.execSQL("delete from filedownlog where downpath = ? ", new Object[]{path});
         db.close();
     }
 

@@ -20,7 +20,7 @@ import androidx.annotation.Nullable;
 public class DBOpenHelper extends SQLiteOpenHelper {
 
     public static final String DBNAME = "keihong.db";
-    public static final int VERSION = 1;
+    public static final int VERSION = 2;
 
     public DBOpenHelper(Context context) {
         super(context, DBNAME, null, VERSION);
